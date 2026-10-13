@@ -1,18 +1,22 @@
 pipeline {
-    agent any {
+    agent any 
         stages {
-            stage ('build') {
+            stage('build') {
+                steps {
             echo 'building the sonarqube application...'
         }
         }
-        stages {
-        stage ('test') {
+        
+        stage('test') {
+            steps {
         echo 'test sonarqube application...'
     }
     }
-        stages {
-    stage ('deploy') {
+        
+    stage('deploy') {
+        steps {
         echo 'deploy sonarqube application'
     }
         }
-    
+    }
+}
