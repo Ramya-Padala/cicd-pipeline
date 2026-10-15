@@ -1,3 +1,7 @@
-FROM nginx:latest
-COPY index.html /usr/share/nginx/html/index.html
-EXPOSE 80
+FROM python:3.15.0-slim-trixie
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY app.py .
+EXPOSE 5000
+CMD ["python", "app.py"]
