@@ -2,21 +2,27 @@ pipeline {
 agent any
 stages {
 stage('build') {
+  steps {
 echo 'building python application...'
 }
 }
-stages {
+
 stage('test') {
+steps {
 echo 'python application is test'
 }
-stages {
+}
+
 stage('deploy') {
+steps {
 echo 'python application is deploy'
 }
 }
-stages {
+
 stage('port') {
+steps {
 echo 'python application is using 5000 port'
+}
 }
 }
 }
